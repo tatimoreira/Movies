@@ -30,13 +30,16 @@ const styles = {
         borderRadius: '16px',
         color: '#2E74C4'
     },
+    navBar:{
+
+    }
 };
 
 function ButtonAppBar(props) {
     const { classes } = props;
     return (
-        <div className={classes.transparentBar}>
-            <AppBar position="static" >
+        <div>
+            <AppBar position="static" className={classes.navBar}>
                 <Toolbar>
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
