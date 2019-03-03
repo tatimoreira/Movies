@@ -41,8 +41,8 @@ function ButtonAppBar(props) {
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
-                    <img src={logo}></img>
-                    <img src={movieHunt}></img>
+                    <img src={logo} alt={"logo"}></img>
+                    <img src={movieHunt} alt={"movieHunt"}></img>
                     <Typography variant="h6" color="inherit" className={classes.grow}></Typography>
                     <Button color="inherit">Top rated</Button>  
                     <Button color="inherit">Movies</Button>

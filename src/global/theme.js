@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/grey';
 import indigo from '@material-ui/core/colors/indigo';
 
 
@@ -12,6 +11,8 @@ export default createMuiTheme({
   },
   typography: {
     fontSize: 20,
+    color: 'white',
+    useNextVariants: true,
   },
   overrides: {
     MuiButton: {
