@@ -5,8 +5,8 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './global/theme';
 import MovieCard from './global/components/MovieCard';
 import CustomCard from './global/components/CustomCardMovie/CustomCard';
-import {  Container, Row, Col } from 'react-bootstrap';
-import {Link} from 'react-router';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +31,8 @@ class App extends Component {
       debugger
       return (
         <Col xs={6} sm={4} md={3} key={movie.id} >
-          <CustomCard></CustomCard>
-          
+          <CustomCard data={movie}></CustomCard>
+
         </Col>
       );
     });
@@ -41,12 +41,16 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <div className="App">
           <NavBar></NavBar>
-          <p>Top Rated Movies</p>
-          <Container fluid={false}>
-            <Row style={style}>
-              {movies}
-            </Row>
-          </Container>
+          <div>
+            <p>Top Rated Movies</p>
+            <Container fluid={false}>
+              <Row style={style}>
+                {movies}
+              </Row>
+            </Container>
+
+          </div>
+
 
         </div>
       </MuiThemeProvider>
