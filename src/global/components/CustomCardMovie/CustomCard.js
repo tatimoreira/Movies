@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './CustomCard.scss';
 
 class CustomCard extends React.Component {
@@ -22,10 +22,9 @@ class CustomCard extends React.Component {
                         </a>
                     </div>
                     <div className="card-content">
-                        <h3 className="card_tittle">{originalTitle}</h3><span>{voteAverage}%</span>
+                        <h3 className="card_tittle">{originalTitle}</h3><span className="vote_average">{voteAverage}%</span>
                         <p className="card_date">{releaseDate}</p>
                         <p className="card_overview">{overview} </p>
-                        {/* <p className="card_overview">When Alita awakens with no memory of who she is in a future world she does not recognize </p> */}
                     </div>
                 </div>
             </article>

@@ -13,23 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-}
-
-function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
-
-    return {
-        top: `${top}%`,
-        left: `${left}%`,
-        transform: `translate(-${top}%, -${left}%)`,
-    };
-}
 
 const styles = theme => ({
     root: {
@@ -53,14 +37,10 @@ const styles = theme => ({
     navBar: {
 
     },
-    paper: {
-        position: 'absolute',
-        width: theme.spacing.unit * 50,
-        backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing.unit * 4,
-        outline: 'none',
-    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+    }
 });
 
 class MovieAppBar extends React.Component {
@@ -89,7 +69,7 @@ class MovieAppBar extends React.Component {
                         <img src={logo} alt={"logo"}></img>
                         <img src={movieHunt} alt={"movieHunt"}></img>
                         <Typography variant="h6" color="inherit" className={classes.grow}></Typography>
-                        <Button color="inherit">Top rated</Button>
+                        <Button >Top rated</Button>
                         <Button color="inherit">Movies</Button>
                         <Button color="inherit">Discover</Button>
                         <span className={classes.divider}></span>
@@ -97,37 +77,39 @@ class MovieAppBar extends React.Component {
                         <Button variant="contained" className={classes.signIn_button}>Sing up</Button>
                     </Toolbar>
                 </AppBar>
-                <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-                    <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-                    <DialogContent>
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title">
+                    <DialogTitle id="form-dialog-title" >
+                        <img src={logo} alt={"logo"}></img>
+                        <img src={movieHunt} alt={"movieHunt"}></img>
+                    </DialogTitle>
+                    <DialogContent >                   
                         <TextField
-                            autoFocus
-                            margin="dense"
-                            id="userName"
+                            id="outlined-search"
                             label="User Name"
-                            type="email"
+                            type="text"
+                            className={classes.textField}
+                            margin="dense"
+                            variant="outlined"
                             fullWidth
-                        />
+                            />
                         <TextField
                             autoFocus
                             margin="dense"
-                            id="password"
+                            id="name"
+                            className={classes.textField}
                             label="Password"
                             type="password"
                             fullWidth
+                            variant="outlined"
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={this.handleClose} >
                             Login
                         </Button>
-                        <span>Dont have account?</span>
-                        <span onClick={this.handleClose} >
-                            subscribe
-                        </span>
-                        <span onClick={this.handleClose} >
-                            Recover password
-                        </span>
                     </DialogActions>
                 </Dialog>
             </div>
